@@ -1,0 +1,256 @@
+.soloyal-homepage-soloyal-homepage {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  background-color: rgba(20, 20, 20, 1);
+}
+.soloyal-homepage-intro {
+  top: 218px;
+  left: 174px;
+  width: 565.614013671875px;
+  height: 357px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.soloyal-homepage-text {
+  left: 1px;
+  color: rgba(241, 241, 241, 1);
+  width: 565px;
+  height: auto;
+  position: absolute;
+  font-size: 73.77999877929688px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 104.99999523162842%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.soloyal-homepage-text02 {
+  top: 114px;
+  color: rgba(241, 241, 241, 1);
+  width: 506px;
+  height: auto;
+  position: absolute;
+  font-size: 21px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 139.9999976158142%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.soloyal-homepage-button {
+  top: 601px;
+  left: 167px;
+  width: 129px;
+  display: flex;
+  padding: 0 23.11111068725586px;
+  position: absolute;
+  align-items: flex-start;
+  border-color: transparent;
+  border-radius: 63.5555534362793px;
+  background-color: rgba(23, 241, 149, 1);
+}
+.soloyal-homepage-text09 {
+  color: rgb(20, 20, 20);
+  height: auto;
+  font-size: 21px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Spectral;
+  font-weight: 600;
+  line-height: 65px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.soloyal-homepage-soloyalty-logo {
+  top: 108.99996948242188px;
+  left: 174.00003051757812px;
+  width: 131px;
+  height: 18px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.soloyal-homepage-vector {
+  top: 0px;
+  left: 0px;
+  width: 27.000028610229492px;
+  height: 18px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.soloyal-homepage-subtract {
+  top: 2.63671875px;
+  left: 10.735630989074707px;
+  width: 9px;
+  height: 13px;
+  position: absolute;
+}
+.soloyal-homepage-rectangle39338 {
+  top: 0px;
+  left: 9px;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  border-color: transparent;
+  border-radius: 1.7356258630752563px;
+}
+.soloyal-homepage-rectangle39339 {
+  top: 0px;
+  left: 18.000104904174805px;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  box-sizing: content-box;
+  border-color: rgba(20, 20, 20, 1);
+  border-style: solid;
+  border-width: 1.1570838689804077px;
+  border-radius: 1.7356258630752563px;
+}
+.soloyal-homepage-text10 {
+  top: 2px;
+  left: 35px;
+  color: var(--dl-color-default-gray6);
+  width: 96px;
+  height: auto;
+  position: absolute;
+  font-size: 19.67058753967285px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 14.752941131591797px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.soloyal-homepage-poweredby {
+  top: 711px;
+  left: 173px;
+  width: 164px;
+  display: flex;
+  padding: 7px 0;
+  position: absolute;
+  align-items: center;
+  border-color: transparent;
+}
+.soloyal-homepage-text12 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Light;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 11px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.soloyal-homepage-solana-pay-mark {
+  width: 60px;
+  height: 22px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.soloyal-homepage-solanapay {
+  top: 4.169189453125px;
+  left: 0px;
+  width: 60px;
+  height: 17.66162109375px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.soloyal-homepage-vector1 {
+  top: 3.615705966949463px;
+  left: 47.46070098876953px;
+  width: 13px;
+  height: 14px;
+  position: absolute;
+}
+.soloyal-homepage-vector2 {
+  top: 0.009989279322326183px;
+  left: 21.01525115966797px;
+  width: 13px;
+  height: 14px;
+  position: absolute;
+}
+.soloyal-homepage-vector3 {
+  top: 3.328047037124634px;
+  left: 35.31344985961914px;
+  width: 12px;
+  height: 11px;
+  position: absolute;
+}
+.soloyal-homepage-vector4 {
+  top: 0px;
+  left: 0px;
+  width: 16px;
+  height: 14px;
+  position: absolute;
+}
