@@ -29,13 +29,13 @@ const theme = createTheme({
           },
 
           "&.Mui-focused": {
-            color: "#32174d"
+            color: "#3CDBD3"
           }
           ,
           fontSize: '1rem',
           width: '100%',
           input: {
-            color: '#32174d',
+            color: '#3CDBD3',
             width: '90%'
           }
         },
@@ -47,7 +47,7 @@ const theme = createTheme({
 
           a: {
             color: '#32174d',
-            
+
             "&:visited":{
               color: '#32174d',
             }
