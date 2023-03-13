@@ -5,15 +5,14 @@ import styled from '@mui/system/styled';
 import IPointsProgramData from '../types/PointsProgram';
 import PointsProgramService from '../services/PointsProgramService';
 import ProgramCreationModal from '../components/ProgramCreationModal';
-import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';;
 
 const Item = styled('div')(({ theme }) => ({
-  bgcolor: 'transparent',
+
   border: '1px solid',
   padding: theme.spacing(1),
   borderRadius: '4px',
-  textAlign: 'center',
+  textAlign: 'left'
 }));
 
 
@@ -52,14 +51,14 @@ class Home extends Component<{}, { programs: IPointsProgramData[] }> {
 
 
 
-          <Grid container spacing={2} sx={{ mt: '2vh', border: '' }}>
+          <Grid container spacing={2} sx={{ mt: '2vh', height: '30vh!important', border: '' }}>
 
             {this.state.programs.map((program: any) => {
               return <Grid xs={12} md={4} sm={6}  >
-                <Item key={program.id} sx={{ color: 'secondary.main', borderColor: 'primary.main' }}>
+                <Item key={program.id} sx={{ color: 'secondary.main', borderColor: 'primary.main' , height: '15vh!important'}}>
                   <h2>{program.name}</h2>
                   <p style={{ color: '#FFF9FB' }} >{program.description}</p>
-                  <Button variant="outlined"><Link to={`/program-view/${program.id}`}>Details</Link></Button>
+                  <Link style={{color: 'white'}} to={`/program-view/${program.id}`}>Details</Link>
                 </Item>
               </Grid>
             })}

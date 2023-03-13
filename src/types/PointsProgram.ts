@@ -15,6 +15,6 @@ export default interface IPointsProgramData {
     tokenName: string,
     tokenSymbol: string,
     image: string,
-    partners?: Array<IPartnersData>
+    partners?: Array<IPartnersData> | [],
     settings?: IPointsSettingsData
   }
