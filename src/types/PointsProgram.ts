@@ -1,4 +1,4 @@
-import IPartnersData from "./Partners";
+import IPartnersData from "./Partner";
 import IPointsSettingsData from "./PointsSettings";
 
 export default interface IPointsProgramData {

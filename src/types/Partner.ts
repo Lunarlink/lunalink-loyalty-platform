@@ -1,4 +1,4 @@
-export default interface IPartnersData {
+export default interface IPartnerData {
     id?: any | null,
     name: string,
     description: string,
