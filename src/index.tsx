@@ -7,7 +7,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
 import ProgramView from './pages/ProgramView';
-import ProgramCreationModal from './components/ProgramCreationModal';
+import Header from './components/Header';
 
 class App extends React.Component {
   render() {
@@ -16,9 +16,7 @@ class App extends React.Component {
         <CssBaseline />
         <Router>
           <div>
-            <nav>
-              <Link to="/">Lunarlink</Link>
-            </nav>
+            <Header></Header>
             <Routes>
               <Route path="/" Component={Home} />
               <Route path="/program-view/:id" Component={ProgramView} />

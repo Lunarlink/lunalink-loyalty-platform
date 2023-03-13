@@ -12,7 +12,7 @@ const theme = createTheme({
       light: '#FFF9FB',
     },
     secondary: {
-      main: '#FFFFFF',
+      main: '#FFF9FB',
       dark: '#11111F'
     },
   },
@@ -22,20 +22,20 @@ const theme = createTheme({
         root: {
 
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#FFFFFF",
+            borderColor: "#32174d",
             "&:hover": {
-              border: '#FFFFFF'
+              border: '#32174d'
             },
           },
 
           "&.Mui-focused": {
-            color: "#FFFFFF"
+            color: "#32174d"
           }
           ,
           fontSize: '1rem',
           width: '100%',
           input: {
-            color: '#FFFFFF',
+            color: '#32174d',
             width: '90%'
           }
         },
@@ -44,14 +44,13 @@ const theme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          "&.MuiTypography-colorPrimary": {
-            color: "green"
-          },
-          "&.MuiTypography-colorSecondary": {
-            color: "green"
-          },
+
           a: {
-            color: '#FFFFFF',
+            color: '#32174d',
+            
+            "&:visited":{
+              color: '#32174d',
+            }
           }
       },
     },

@@ -5,7 +5,6 @@ import withRouter from '../services/withRouter';
 import styled from '@mui/system/styled';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
 import TableContainer from '@mui/material/TableContainer';
 import Table from '@mui/material/Table';
 import TableCell from '@mui/material/TableCell';
@@ -29,19 +28,24 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Backdrop from '@mui/material/Backdrop';
 
 const style = {
-    border: '1px solid',
+    border: '1px solid  #32174d',
     borderRadius: '4px',
     textAlign: 'left',
-    bgcolor: '#F1F1F1',
-    color: 'secondary.dark',
-    borderColor: 'primary.main'
+    bgcolor: 'transparent',
+    color: '#3CDBD3',
+    paddingLeft: '30px'
 };
 
 const Item = styled('div')(({ theme }) => ({
     border: '1px solid',
     padding: theme.spacing(1),
     borderRadius: '4px',
+    color: 'priamry.main'
 }));
+
+const secondaryText = {
+    color: 'secondary.main',
+};
 
 const modalStyle = {
     position: 'absolute' as 'absolute',
@@ -152,35 +156,34 @@ class ProgramView extends Component<{}, any>  {
                     <Grid container spacing={5} sx={{ mt: '2vh', border: '' }}>
                         <Grid item xs={12} md={6} lg={6}>
                             <Item sx={style}>
-                                <h2 style={{ color: '#3CDBD3' }}>Program Details</h2>
+                                <h2 >Program Details</h2>
                                 <List
                                 sx={{
                                     width: '100%',
-                                    bgcolor: 'background.paper',
                                 }}
                             >
                                     <ListItem>
-                                        <ListItemText primary="Name" secondary={program.name} />
+                                        <ListItemText primary="Name" secondary={program.name} secondaryTypographyProps={secondaryText}/>
                                     </ListItem>
                                     <Divider variant="middle" component="li" />
                                     <ListItem>
-                                        <ListItemText primary="Type" secondary={program.type} />
+                                        <ListItemText primary="Type" secondary={program.type} secondaryTypographyProps={secondaryText} />
                                     </ListItem>
                                     <Divider variant="middle" component="li" />
                                     <ListItem>
-                                        <ListItemText primary="Organizer" secondary={program.organizer} />
+                                        <ListItemText primary="Organizer" secondary={program.organizer} secondaryTypographyProps={secondaryText} />
                                     </ListItem>
                                     <Divider variant="middle" component="li" />
                                     <ListItem>
-                                        <ListItemText primary="email" secondary={program.email} />
+                                        <ListItemText primary="Email" secondary={program.email} secondaryTypographyProps={secondaryText} />
                                     </ListItem>
                                     <Divider variant="middle" component="li" />
                                     <ListItem>
-                                        <ListItemText primary="Created" secondary={program.created} />
+                                        <ListItemText primary="Created" secondary={program.created} secondaryTypographyProps={secondaryText} />
                                     </ListItem>
                                     <Divider variant="middle" component="li" />
                                     <ListItem>
-                                        <ListItemText primary="Description" secondary={program.description} />
+                                        <ListItemText primary="Description" secondary={program.description} secondaryTypographyProps={secondaryText} />
                                     </ListItem>
                                 </List>
                             </Item>
@@ -188,12 +191,10 @@ class ProgramView extends Component<{}, any>  {
                         </Grid>
                         <Grid item xs={12} md={6} lg={6}>
                             <Item sx={style}>
-                                <h2 style={{ color: '#3CDBD3' }}>Token Details</h2>
-                            </Item>
-                            <List
+                                <h2 >Token Details</h2>
+                                <List
                                 sx={{
                                     width: '100%',
-                                    bgcolor: 'background.paper',
                                 }}
                             >
                                 <ListItem>
@@ -207,23 +208,25 @@ class ProgramView extends Component<{}, any>  {
                                                 height="64"
                                             />
                                         </Avatar></ListItemAvatar>
-                                    <ListItemText primary="Symbol" secondary={program.tokenSymbol} />
+                                    <ListItemText primary="Symbol" secondary={program.tokenSymbol}  secondaryTypographyProps={secondaryText}/>
                                 </ListItem>
 
                                 <Divider variant="middle" component="li" />
                                 <ListItem>
-                                    <ListItemText primary="Name" secondary={program.tokenName} />
+                                    <ListItemText primary="Name" secondary={program.tokenName}  secondaryTypographyProps={secondaryText}/>
                                 </ListItem>
                                 <Divider variant="middle" component="li" />
                                 <ListItem>
-                                    <ListItemText primary="Reward Rate" secondary={program.settings?.rewardRate} />
+                                    <ListItemText primary="Reward Rate" secondary={program.settings?.rewardRate}  secondaryTypographyProps={secondaryText}/>
                                 </ListItem>
                                 <Divider variant="middle" component="li" />
                                 <ListItem>
-                                    <ListItemText primary="Contract Address" secondary={<Link to={`https://explorer.solana.com/address/${program.tokenAddress}?cluster=devnet`} target="_blank">{program.tokenAddress}&nbsp;<OpenInNewIcon /></Link>} />
+                                    <ListItemText primary="Contract Address"  secondaryTypographyProps={secondaryText} secondary={<Link to={`https://explorer.solana.com/address/${program.tokenAddress}?cluster=devnet`} target="_blank">{program.tokenAddress}&nbsp;<OpenInNewIcon /></Link>} />
                                 </ListItem>
 
                             </List>
+                            </Item>
+                            
                         </Grid>
                     </Grid>
                     
@@ -283,27 +286,27 @@ class ProgramView extends Component<{}, any>  {
                     </Backdrop>
                     
                     <Button variant="contained" onClick={this.handleOpen} sx={{float: 'right', mt: '6vh', mb: '2vh'}}>Add Partner</Button>
-                    <TableContainer component={Paper} sx={{ mt: '5vh' }}>
+                    <TableContainer sx={{ mt: '5vh', color: '#32174d' }}>
                         
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                            <TableHead sx={{ border: '3px solid #3CDBD3' }}>
+                            <TableHead sx={{ border: '1px solid #32174d' }}>
                                 <TableRow>
-                                    <TableCell align="right" sx={{ color: '#3CDBD3', fontWeight: 'bold' }}>Name</TableCell>
-                                    <TableCell align="right" sx={{ color: '#3CDBD3', fontWeight: 'bold' }}>Description</TableCell>
-                                    <TableCell align="right" sx={{ color: '#3CDBD3', fontWeight: 'bold' }}>Email</TableCell>
-                                    <TableCell align="right" sx={{ color: '#3CDBD3', fontWeight: 'bold' }}>Wallet Address</TableCell>
+                                    <TableCell align="right" sx={{ color: '#3CDBD3', fontWeight: 'bold', borderBottom:'#32174d'}}>Name</TableCell>
+                                    <TableCell align="right" sx={{ color: '#3CDBD3', fontWeight: 'bold', borderBottom:'#32174d' }}>Description</TableCell>
+                                    <TableCell align="right" sx={{ color: '#3CDBD3', fontWeight: 'bold', borderBottom:'#32174d' }}>Email</TableCell>
+                                    <TableCell align="right" sx={{ color: '#3CDBD3', fontWeight: 'bold', borderBottom:'#32174d' }}>Wallet Address</TableCell>
                                 </TableRow>
                             </TableHead>
-                            <TableBody>
+                            <TableBody sx={{ border: '1px solid #32174d' }}>
                                 {partners.map((row) => (
                                     <TableRow
                                         key={row.name}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell align="right">{row.name}</TableCell>
-                                        <TableCell align="right">{row.description}</TableCell>
-                                        <TableCell align="right">{row.email}</TableCell>
-                                        <TableCell align="right">{row.walletAddress}</TableCell>
+                                        <TableCell align="right" sx={{color: 'white', borderBottom:'1px solid #32174d'}}>{row.name}</TableCell>
+                                        <TableCell align="right" sx={{color: 'white', borderBottom:'1px solid #32174d'}}>{row.description}</TableCell>
+                                        <TableCell align="right" sx={{color: 'white', borderBottom:'1px solid #32174d'}}>{row.email}</TableCell>
+                                        <TableCell align="right" sx={{color: 'white', borderBottom:'1px solid #32174d'}}>{row.walletAddress}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
