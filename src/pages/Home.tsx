@@ -5,6 +5,8 @@ import styled from '@mui/system/styled';
 import IPointsProgramData from '../types/PointsProgram';
 import PointsProgramService from '../services/PointsProgramService';
 import ProgramCreationModal from '../components/ProgramCreationModal';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';;
 
 const Item = styled('div')(({ theme }) => ({
   bgcolor: 'transparent',
@@ -57,6 +59,7 @@ class Home extends Component<{}, { programs: IPointsProgramData[] }> {
                 <Item key={program.id} sx={{ color: 'secondary.main', borderColor: 'primary.main' }}>
                   <h2>{program.name}</h2>
                   <p style={{ color: '#FFF9FB' }} >{program.description}</p>
+                  <Button variant="outlined"><Link to={`/program-view/${program.id}`}>Details</Link></Button>
                 </Item>
               </Grid>
             })}
