@@ -25,6 +25,8 @@ import TextField from '@mui/material/TextField';
 import Modal from '@mui/material/Modal';
 import IPartnerData from '../types/Partner';
 import PartnerService from '../services/PartnerService';
+import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from '@mui/material/Backdrop';
 
 const style = {
     border: '1px solid',
@@ -113,7 +115,6 @@ class ProgramView extends Component<{}, any>  {
     addPartner = () => {
 
         let pM = this.state.partnerModel;
-        alert(JSON.stringify(this.state))
         const model: IPartnerData = {
             name: pM.name,
             description: pM.description,
@@ -122,7 +123,7 @@ class ProgramView extends Component<{}, any>  {
             associatedProgram: this.state.program.id
         };
 
-        //this.handleClose();
+        this.handleClose();
         this.setState({ loader: true });
 
         PartnerService.add(model)
@@ -146,31 +147,38 @@ class ProgramView extends Component<{}, any>  {
         let partners = program.partners ? program.partners : []
         return (
             <Container>
-                <Box sx={{ height: '100vh', mt: '5vh' }} >
+                <Box sx={{ height: '100vh', mt: '5vh', mb: '5vh' }} >
 
-                    <Grid container spacing={2} sx={{ mt: '2vh', border: '' }}>
-                        <Grid item xs={12} md={6} lg={7}>
+                    <Grid container spacing={5} sx={{ mt: '2vh', border: '' }}>
+                        <Grid item xs={12} md={6} lg={6}>
                             <Item sx={style}>
                                 <h2 style={{ color: '#3CDBD3' }}>Program Details</h2>
-                                <List sx={{
+                                <List
+                                sx={{
                                     width: '100%',
                                     bgcolor: 'background.paper',
-                                }}>
+                                }}
+                            >
                                     <ListItem>
                                         <ListItemText primary="Name" secondary={program.name} />
                                     </ListItem>
+                                    <Divider variant="middle" component="li" />
                                     <ListItem>
                                         <ListItemText primary="Type" secondary={program.type} />
                                     </ListItem>
+                                    <Divider variant="middle" component="li" />
                                     <ListItem>
                                         <ListItemText primary="Organizer" secondary={program.organizer} />
                                     </ListItem>
+                                    <Divider variant="middle" component="li" />
                                     <ListItem>
                                         <ListItemText primary="email" secondary={program.email} />
                                     </ListItem>
+                                    <Divider variant="middle" component="li" />
                                     <ListItem>
                                         <ListItemText primary="Created" secondary={program.created} />
                                     </ListItem>
+                                    <Divider variant="middle" component="li" />
                                     <ListItem>
                                         <ListItemText primary="Description" secondary={program.description} />
                                     </ListItem>
@@ -178,7 +186,7 @@ class ProgramView extends Component<{}, any>  {
                             </Item>
 
                         </Grid>
-                        <Grid item xs={12} md={6} lg={5}>
+                        <Grid item xs={12} md={6} lg={6}>
                             <Item sx={style}>
                                 <h2 style={{ color: '#3CDBD3' }}>Token Details</h2>
                             </Item>
@@ -206,6 +214,7 @@ class ProgramView extends Component<{}, any>  {
                                 <ListItem>
                                     <ListItemText primary="Name" secondary={program.tokenName} />
                                 </ListItem>
+                                <Divider variant="middle" component="li" />
                                 <ListItem>
                                     <ListItemText primary="Reward Rate" secondary={program.settings?.rewardRate} />
                                 </ListItem>
@@ -217,7 +226,7 @@ class ProgramView extends Component<{}, any>  {
                             </List>
                         </Grid>
                     </Grid>
-                    <Button variant="contained" onClick={this.handleOpen}>Add Partner</Button>
+                    
                     <Modal
                         aria-labelledby="modal-modal-title"
                         aria-describedby="modal-modal-description"
@@ -225,7 +234,7 @@ class ProgramView extends Component<{}, any>  {
                         onClose={this.handleClose}
                         BackdropProps={{ style: { backgroundColor: "black", opacity: 0.8 } }}>
                         <Box sx={modalStyle}>
-                            <h2>Create Program</h2>
+                            <h2>Add Partner</h2>
 
                             <TextField label="Name" variant="outlined" placeholder="Name" sx={{ mb: 5 }}
                                 onChange={(e) => {
@@ -266,7 +275,16 @@ class ProgramView extends Component<{}, any>  {
                             <Button variant="contained" sx={{ float: "right" }} onClick={this.addPartner}>Add</Button>
                         </Box>
                     </Modal>
+                    <Backdrop
+                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={this.state.loader}
+                    >
+                        <CircularProgress color="inherit" />
+                    </Backdrop>
+                    
+                    <Button variant="contained" onClick={this.handleOpen} sx={{float: 'right', mt: '6vh', mb: '2vh'}}>Add Partner</Button>
                     <TableContainer component={Paper} sx={{ mt: '5vh' }}>
+                        
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead sx={{ border: '3px solid #3CDBD3' }}>
                                 <TableRow>
