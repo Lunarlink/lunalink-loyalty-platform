@@ -1,12 +1,13 @@
+import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import { Component } from 'react';
 import PointsProgramService from '../services/PointsProgramService';
 import IPointsProgramData from '../types/PointsProgram';
 import IPointsSettingsData from '../types/PointsSettings';
-import { useNavigate } from "react-router-dom";
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -24,6 +25,7 @@ class ProgramCreationModal extends Component {
 
     state = {
         open: false,
+        loader: false,
         name: '',
         description: '',
         organizer: '',
@@ -70,9 +72,12 @@ class ProgramCreationModal extends Component {
             settings: settings
         };
 
+        this.handleClose();
+        this.setState({ loader: true });
+
         PointsProgramService.create(model)
             .then((response: any) => {
-                this.handleClose();
+                this.setState({ loader: false });
                 window.location.reload();
             })
             .catch((e: Error) => {
@@ -158,6 +163,12 @@ class ProgramCreationModal extends Component {
                         <Button variant="contained" sx={{ float: "right" }} onClick={this.create}>Create</Button>
                     </Box>
                 </Modal>
+                <Backdrop
+                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                    open={this.state.loader}
+                >
+                    <CircularProgress color="inherit" />
+                </Backdrop>
             </div>
         );
     }
